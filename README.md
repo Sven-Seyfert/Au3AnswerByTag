@@ -21,7 +21,19 @@ Au3AnswerByTag is a support tool for the Servicedesk employees of [University of
 
 ## Features
 
-To be defined [...]
+<details>
+<summary><i>Opened program</i></summary><br>
+
+![OpenedProgram](screenshots/OpenedProgram.png)
+
+</details>
+
+<details>
+<summary><i>Chosen answer</i></summary><br>
+
+![OpenedProgram](screenshots/ChosenAnswer.png)
+
+</details>
 
 ## Getting started
 
@@ -49,7 +61,6 @@ To be defined [...]
 | Action                | Shortcut       |
 | :---                  | :---           |
 | Copy displayed answer | `Ctrl + Space` |
-| ...                   | ...            |
 
 ## Configuration
 
