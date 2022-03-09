@@ -11,7 +11,7 @@ Go to [legend](#legend---types-of-changes) for further information about the typ
 
 ## [Unreleased]
 
-## [0.2.0] - 2022-03-07
+## [0.2.0] - 2022-03-09
 
 ### Added
 
