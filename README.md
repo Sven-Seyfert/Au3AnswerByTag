@@ -45,13 +45,6 @@ Image coming soon [...]
 </details>
 
 <details>
-<summary><i>Use rich text format editor</i></summary><br>
-
-Image coming soon [...]
-
-</details>
-
-<details>
 <summary><i>Copy action</i></summary><br>
 
 Image coming soon [...]

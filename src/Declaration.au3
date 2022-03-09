@@ -3,7 +3,7 @@ Global $sSqliteDll                      = '..\data\sqlite3_x64.dll'
 Global $sQuillEditorFilePath            = '..\data\quilljs.html'
 Global $sSignatureFilePath              = '..\data\signature.html'
 Global $sDatabaseFilePath               = IniRead($sConfigFilePath, 'Settings', 'DatabaseFilePath', '..\data\Au3AnswerByTag.db')
-Global $sWithKindRegardsOf              = IniRead($sConfigFilePath, 'Settings', 'WithKindRegardsOf', '<NAME>') ; TODO: Implement it for save, update and copy.
+Global $sWithKindRegardsOf              = IniRead($sConfigFilePath, 'Settings', 'WithKindRegardsOf', '<NAME>')
 Global $sMessageBoxBeforeSaveOrUpdate   = IniRead($sConfigFilePath, 'Settings', 'MessageBoxBeforeSaveOrUpdate', 'y')
 Global $sMinimizeProgramAfterCopyAction = IniRead($sConfigFilePath, 'Settings', 'MinimizeProgramAfterCopyAction', 'n')
 Global $hDatabase
