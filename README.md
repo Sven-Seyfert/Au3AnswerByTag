@@ -17,27 +17,46 @@
 
 ## Description
 
-Au3AnswerByTag is a support tool for the Servicedesk employees of [University of Twente](https://www.utwente.nl/en/) in the Netherlands. Answers of repeating questions can be stored within the tool. They can quick and easily found by tags and copied in rich text format style to email program of choice.
+Au3AnswerByTag is a support tool for the Servicedesk employees of [University of Twente](https://www.utwente.nl/en/) in the Netherlands. Answers of repeating questions can be stored within the tool. They can quick and easily found by tags and copied in rich text format style to the email program of choice.
 
 > Please notice, the program is still in testing phase and I have to add a few more features before it will become a 1.0.0 version.
 
 ## Features
 
 <details>
-<summary><i>Opened program</i></summary><br>
+<summary><i>Store new answers in a database</i></summary><br>
 
-![OpenedProgram](screenshots/OpenedProgram.png)
+Image coming soon [...]
 
 </details>
 
 <details>
-<summary><i>Chosen answer</i></summary><br>
+<summary><i>Find answers by tag</i></summary><br>
 
-![OpenedProgram](screenshots/ChosenAnswer.png)
+Image coming soon [...]
 
 </details>
 
-To be defined [...]
+<details>
+<summary><i>Use rich text format editor</i></summary><br>
+
+Image coming soon [...]
+
+</details>
+
+<details>
+<summary><i>Use rich text format editor</i></summary><br>
+
+Image coming soon [...]
+
+</details>
+
+<details>
+<summary><i>Copy action</i></summary><br>
+
+Image coming soon [...]
+
+</details>
 
 ## Getting started
 
@@ -62,9 +81,11 @@ To be defined [...]
 
 #### *Keyboard shortcuts*
 
-| Action                | Shortcut       |
-| :---                  | :---           |
-| Copy displayed answer | `Ctrl + Space` |
+| Action                | Shortcut |
+| :---                  | :---     |
+| Show GUI              | `Ctrl+1` |
+| Copy displayed answer | `Ctrl+2` |
+| Reload list of tags   | `Ctrl+3` |
 
 ## Configuration
 
@@ -105,7 +126,7 @@ Distributed under the MIT License. See [LICENSE](https://github.com/Sven-Seyfert
 
 - Opportunity by [GitHub](https://github.com)
 - Badges by [Shields](https://shields.io)
-- Quill Rich Text Editor [Quill](https://github.com/quilljs/quill)
+- Used RTF (Rich Text Format) editor [Quill](https://github.com/quilljs/quill)
 - Utilities components by
   - none
 

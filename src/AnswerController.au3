@@ -8,14 +8,17 @@ Func _CreateQuillEditorHtmlFile($sAnswerContent = '')
         '    <meta http-equiv="X-UA-Compatible" content="IE=edge" />' & @CRLF & _
         '    <meta name="viewport" content="width=device-width, initial-scale=1.0" />' & @CRLF & _
         '    <title>Au3AnswerByTag</title>' & @CRLF & _
-        '    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />' & @CRLF & _
+        '    <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet" />' & @CRLF & _
         '  </head>' & @CRLF & _
         '  <body>' & @CRLF & _
         '    <div id="editor" style="min-height: ' & $iQuillEditorHeight - 60 & 'px;">' & @CRLF & _
         '      ' & $sAnswerContent & @CRLF & _
         '    </div>' & @CRLF & _
-        '    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>' & @CRLF & _
+        '    <script src="https://cdn.quilljs.com/1.3.7/quill.js"></script>' & @CRLF & _
         '    <script>' & @CRLF & _
+        '      var Block = Quill.import(''blots/block'');' & @CRLF & _
+        '      Block.tagName = ''DIV'';' & @CRLF & _
+        '      Quill.register(Block, true);' & @CRLF & _
         '      var toolbarOptions = [' & @CRLF & _
         '        ["bold", "italic", "underline", "strike"],' & @CRLF & _
         '        [{ color: [] }, { background: [] }],' & @CRLF & _
@@ -70,36 +73,20 @@ Func _LoadAnswer($aListOfAnswers, $iIndex)
 EndFunc
 
 Func _CopyAnswerToClipboard()
-    If Not _IsFocusOnGui($aGui[$eHandle]) Then
+    Local Const $iActiveButton = 80
+    If GUICtrlGetState($cCopyButton) <> $iActiveButton Then
         Return
     EndIf
 
     _CopyAction()
-    _GoBackToListOfTags()
-EndFunc
+    _ClickListOfTagsDropdown()
 
-Func _CopyAction()
-    MouseClick('left', 18, 187, 1, 0)
-    Sleep(150)
+    If Not _ShouldProgramBeMinimizedAfterCopyAction() Then
+        Return
+    EndIf
 
-    Send('^a')
-    Sleep(150)
-
-    Send('^c')
-    Sleep(150)
-EndFunc
-
-Func _GoBackToListOfTags()
-    Send('{RIGHT}')
-    Sleep(150)
-
-    MouseClick('left', 178, 78, 1, 0)
-EndFunc
-
-Func _IsFocusOnGui($hGuiOrTitle)
-    Local Const $iStateOfFocusedWindow = 15
-
-    Return WinGetState($hGuiOrTitle) == $iStateOfFocusedWindow
+    _MinimizeGui()
+    _GoBackToPreviousWindow()
 EndFunc
 
 Func _PrepareAddingNewAnswer()
@@ -121,8 +108,10 @@ Func _SaveNewAnswer()
         Return
     EndIf
 
-    If Not _IsQuestionAnsweredByYes('Are you sure you want to add the new answer and persist to database?') Then
-        Return
+    If _ShouldMessageBoxBeDisplayed() Then
+        If Not _IsQuestionAnsweredByYes('Are you sure you want to add the new answer and persist to database?') Then
+            Return
+        EndIf
     EndIf
 
     Local $sAnswer = _IEGetObjById($oIE, "editor").innerHTML
@@ -149,8 +138,10 @@ Func _UpdateCurrentAnswer($aListOfAnswers)
         Return
     EndIf
 
-    If Not _IsQuestionAnsweredByYes('Are you sure you want to update the current displayed answer and persist to database?') Then
-        Return
+    If _ShouldMessageBoxBeDisplayed() Then
+        If Not _IsQuestionAnsweredByYes('Are you sure you want to update the current displayed answer and persist to database?') Then
+            Return
+        EndIf
     EndIf
 
     Local $sAnswer = _IEGetObjById($oIE, "editor").innerHTML

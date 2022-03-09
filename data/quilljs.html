@@ -5,14 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Au3AnswerByTag</title>
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+    <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet" />
   </head>
   <body>
-    <div id="editor" style="min-height: 356.666666666667px;">
+    <div id="editor" style="min-height: 364.166666666667px;">
       
     </div>
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.7/quill.js"></script>
     <script>
+      var Block = Quill.import('blots/block');
+      Block.tagName = 'DIV';
+      Quill.register(Block, true);
       var toolbarOptions = [
         ["bold", "italic", "underline", "strike"],
         [{ color: [] }, { background: [] }],

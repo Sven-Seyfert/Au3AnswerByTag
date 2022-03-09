@@ -22,8 +22,15 @@ EndFunc
 
 Func _QueryResultToArray($sQuery)
     Local $aQueryResult, $iRows, $iColumns
+    Local $iSqliteReturn = _SQLite_GetTable2d($hDatabase, $sQuery, $aQueryResult, $iRows, $iColumns)
 
-    _SQLite_GetTable2d($hDatabase, $sQuery, $aQueryResult, $iRows, $iColumns)
+    If $iSqliteReturn == $SQLITE_ERROR Then
+        Local Const $iErrorIcon = 16
+        MsgBox($iErrorIcon, 'Error', 'Database not found on expected localtion "' & $sDatabaseFilePath & '".')
+
+        _TearDown()
+        Exit -1
+    EndIf
 
     Return $aQueryResult
 EndFunc

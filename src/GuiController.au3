@@ -1,5 +1,13 @@
+Func _MinimizeGui()
+    GUISetState(@SW_MINIMIZE, $aGui[$eHandle])
+EndFunc
+
 Func _ShowGui()
+    $hLastActiveWindow = WinGetHandle('')
+    $aMousePosition    = MouseGetPos()
+
     GUISetState(@SW_SHOW, $aGui[$eHandle])
+    _ClickListOfTagsDropdown()
 EndFunc
 
 Func _LoadTagDropdown($sListOfTags)
@@ -69,4 +77,19 @@ EndFunc
 Func _EnableControl($cControl)
     Local Const $iEnable = 64
     GUICtrlSetState($cControl, $iEnable)
+EndFunc
+
+Func _WatchDropdownInput_WindowsMessage($hWnd, $iMsg, $wParam, $lParam)
+    Local $cControl = _WinAPI_LoWord($wParam)
+    Local $iCode    = _WinAPI_HiWord($wParam)
+
+    If $cControl <> $cTagDropdown Then
+        Return
+    EndIf
+
+    If $iCode <> $CBN_EDITCHANGE Then
+        Return
+    EndIf
+
+    _GUICtrlComboBox_AutoComplete($cTagDropdown)
 EndFunc

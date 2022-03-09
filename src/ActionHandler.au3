@@ -9,9 +9,13 @@ Global $sPipeSeparatedTags = _BuildPipeSeparatedTagString($aListOfTags)
 _CreateGuiStructure()
 _LoadTagDropdown($sPipeSeparatedTags)
 _LoadQuillEditor()
-_ShowGui()
+_MinimizeGui()
 
-HotKeySet('^{SPACE}', '_CopyAnswerToClipboard')
+HotKeySet('^1', '_ShowGui')
+HotKeySet('^2', '_CopyAnswerToClipboard')
+HotKeySet('^3', '_ReloadTagList')
+
+GUIRegisterMsg($WM_COMMAND, '_WatchDropdownInput_WindowsMessage')
 
 While True
     Switch GUIGetMsg()
@@ -27,11 +31,14 @@ While True
 
             _SetPagination($aListOfAnswers)
 
+        Case $cReloadButton
+            _ReloadTagList()
+
         Case $cCopyButton
             _CopyAnswerToClipboard()
 
         Case $cOpenConfigButton
-            Run('notepad.exe ' & $sConfigFilePath)
+            _OpenConfigFile()
 
         Case $cAddAnswerButton
             _PrepareAddingNewAnswer()

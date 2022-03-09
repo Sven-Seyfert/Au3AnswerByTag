@@ -1,9 +1,9 @@
 ; compiler information for AutoIt
 #pragma compile(CompanyName, © SOLVE SMART)
-#pragma compile(FileVersion, 0.1.0)
+#pragma compile(FileVersion, 0.2.0)
 #pragma compile(LegalCopyright, © Sven Seyfert)
 #pragma compile(ProductName, Au3AnswerByTag)
-#pragma compile(ProductVersion, 0.1.0 - 2022-03-02)
+#pragma compile(ProductVersion, 0.2.0 - 2022-03-09)
 
 #AutoIt3Wrapper_AU3Check_Stop_OnWarning=y
 #AutoIt3Wrapper_Icon=..\media\favicon.ico
@@ -24,6 +24,8 @@ If $aInst[0][0] > 1 Then Exit
 ; includes ---------------------------------------------------------------------
 #include-once
 #include <Array.au3>
+#include <GuiComboBox.au3>
+#include <GUIConstants.au3>
 #include <GuiRichEdit.au3>
 #include <IE.au3>
 #include <SQLite.au3>

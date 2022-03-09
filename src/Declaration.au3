@@ -1,10 +1,13 @@
-Global $sConfigFilePath               = '..\config\config.ini'
-Global $sSqliteDll                    = '..\data\sqlite3_x64.dll'
-Global $sQuillEditorFilePath          = '..\data\quilljs.html'
-Global $sDatabaseFilePath             = IniRead($sConfigFilePath, 'Settings', 'DatabaseFilePath', '..\data\Au3AnswerByTag.db')
-Global $sSignatureAppendix            = IniRead($sConfigFilePath, 'Settings', 'SignatureAppendix', 'with kind regards, <NAME>') ; TODO: Implement it for save, update and copy.
-Global $sMessageBoxBeforeSaveOrUpdate = IniRead($sConfigFilePath, 'Settings', 'MessageBoxBeforeSaveOrUpdate', 'y') ; TODO: Implement it for save, update and delete.
+Global $sConfigFilePath                 = '..\config\config.ini'
+Global $sSqliteDll                      = '..\data\sqlite3_x64.dll'
+Global $sQuillEditorFilePath            = '..\data\quilljs.html'
+Global $sSignatureFilePath              = '..\data\signature.html'
+Global $sDatabaseFilePath               = IniRead($sConfigFilePath, 'Settings', 'DatabaseFilePath', '..\data\Au3AnswerByTag.db')
+Global $sWithKindRegardsOf              = IniRead($sConfigFilePath, 'Settings', 'WithKindRegardsOf', '<NAME>') ; TODO: Implement it for save, update and copy.
+Global $sMessageBoxBeforeSaveOrUpdate   = IniRead($sConfigFilePath, 'Settings', 'MessageBoxBeforeSaveOrUpdate', 'y')
+Global $sMinimizeProgramAfterCopyAction = IniRead($sConfigFilePath, 'Settings', 'MinimizeProgramAfterCopyAction', 'n')
 Global $hDatabase
+Global $hLastActiveWindow, $aMousePosition
 
 Global Const $iGuiEventClose = -3
 Global $sInitDropdownText    = 'List of tags'
@@ -15,7 +18,7 @@ Global $aGui[$iMaxEnumIndex]
        $aGui[$eHeight] = Int(IniRead($sConfigFilePath, 'Settings', 'GuiHeight', 625))
        $aGui[$eGap]    = 15
 
-Global $cTagDropdown, $cCopyButton
+Global $cTagDropdown, $cReloadButton, $cCopyButton
 Global $cPaginationLabel, $cPreviousAnswerButton, $cNextAnswerButton
 Global $cOpenConfigButton
 
@@ -24,7 +27,9 @@ Global $oIE
 Global $cAddAnswerButton, $cSaveAnswerButton, $cNewTagInput
 Global $cUpdateAnswerButton, $cDeleteAnswerButton, $cCurrentTagInput
 
-Global $iQuillEditorHeight = $aGui[$eHeight] / 1.5
-Global $iControlBottomPosition
-Global $iMinAnswerIndex, $iMaxAnswerIndex
+Global $iQuillEditorHeight = ($aGui[$eHeight] / 1.5) + ($aGui[$eGap] / 2)
+Global $iHeightOfGuiGroup = 70
+Global $iControlBottomPosition = $iHeightOfGuiGroup + $aGui[$eGap]
 
+Global $iMinAnswerIndex, $iMaxAnswerIndex
+Global $bWasConfigFileAlreadyOpened = False
