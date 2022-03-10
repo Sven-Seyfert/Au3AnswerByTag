@@ -7,7 +7,9 @@ Global $sWithKindRegardsOf              = IniRead($sConfigFilePath, 'Settings', 
 Global $sMessageBoxBeforeSaveOrUpdate   = IniRead($sConfigFilePath, 'Settings', 'MessageBoxBeforeSaveOrUpdate', 'y')
 Global $sMinimizeProgramAfterCopyAction = IniRead($sConfigFilePath, 'Settings', 'MinimizeProgramAfterCopyAction', 'n')
 Global $hDatabase
-Global $hLastActiveWindow, $aMousePosition
+
+Global $hOutlookWindow, $aMousePosition
+Global $sClassOfOutlookWindow = '[CLASS:rctrl_renwnd32]'
 
 Global Const $iGuiEventClose = -3
 Global $sInitDropdownText    = 'List of tags'

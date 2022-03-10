@@ -1,9 +1,9 @@
 ; compiler information for AutoIt
 #pragma compile(CompanyName, © SOLVE SMART)
-#pragma compile(FileVersion, 0.2.0)
+#pragma compile(FileVersion, 0.3.0)
 #pragma compile(LegalCopyright, © Sven Seyfert)
 #pragma compile(ProductName, Au3AnswerByTag)
-#pragma compile(ProductVersion, 0.2.0 - 2022-03-09)
+#pragma compile(ProductVersion, 0.3.0 - 2022-03-10)
 
 #AutoIt3Wrapper_AU3Check_Stop_OnWarning=y
 #AutoIt3Wrapper_Icon=..\media\favicon.ico

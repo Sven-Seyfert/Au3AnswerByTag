@@ -3,11 +3,16 @@ Func _MinimizeGui()
 EndFunc
 
 Func _ShowGui()
-    $hLastActiveWindow = WinGetHandle('')
-    $aMousePosition    = MouseGetPos()
+    _SaveHandleAndCoordinatesOfOutlookWindow()
 
     GUISetState(@SW_SHOW, $aGui[$eHandle])
+
     _ClickListOfTagsDropdown()
+EndFunc
+
+Func _SaveHandleAndCoordinatesOfOutlookWindow()
+    $hOutlookWindow = WinGetHandle($sClassOfOutlookWindow)
+    $aMousePosition = MouseGetPos()
 EndFunc
 
 Func _LoadTagDropdown($sListOfTags)

@@ -78,6 +78,12 @@ Func _AddWithKindRegardsToAnswer()
     Local Const $iNotCaseSensitive          = 2
     Local Const $iReplaceOnlyFirstOccurence = 0
 
+    Local $sSignatureIndicator = 'With kind regards,'
+
+    If StringInStr(_GetFileContent($sQuillEditorFilePath), $sSignatureIndicator, $iNotCaseSensitive) <> 0 Then
+        Return
+    EndIf
+
     Local $sSearch  = '</div><div tabindex="'
     Local $sReplace = StringReplace(_GetFileContent($sSignatureFilePath), '$(Name)', $sWithKindRegardsOf) & $sSearch
 
@@ -90,8 +96,8 @@ Func _BringGuiToFront()
     Sleep(100)
 EndFunc
 
-Func _GoBackToPreviousWindow()
-    WinActivate($hLastActiveWindow)
+Func _GoBackToOutlookWindow()
+    WinActivate($hOutlookWindow)
     Sleep(200)
 
     Local $iXPosition = $aMousePosition[0]

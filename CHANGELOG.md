@@ -11,6 +11,17 @@ Go to [legend](#legend---types-of-changes) for further information about the typ
 
 ## [Unreleased]
 
+## [0.3.0] - 2022-03-10
+
+### Changed
+
+- Go back to MS Outlook window after copy action instead of previous window.
+- Version bump.
+
+### Fixed
+
+- Adding signature multiple times for copy action (guard checks for exists state).
+
 ## [0.2.0] - 2022-03-09
 
 ### Added
@@ -40,7 +51,8 @@ Go to [legend](#legend---types-of-changes) for further information about the typ
 
 - All repository data and dependencies.
 
-[Unreleased]: https://github.com/Sven-Seyfert/Au3AnswerByTag/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/Sven-Seyfert/Au3AnswerByTag/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/Sven-Seyfert/Au3AnswerByTag/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/Sven-Seyfert/Au3AnswerByTag/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/Sven-Seyfert/Au3AnswerByTag/releases/tag/v0.1.0
 

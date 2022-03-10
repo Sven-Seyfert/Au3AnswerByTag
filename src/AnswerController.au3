@@ -86,7 +86,7 @@ Func _CopyAnswerToClipboard()
     EndIf
 
     _MinimizeGui()
-    _GoBackToPreviousWindow()
+    _GoBackToOutlookWindow()
 EndFunc
 
 Func _PrepareAddingNewAnswer()
