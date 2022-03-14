@@ -134,7 +134,7 @@ Func _OpenConfigFile()
         Local Const $iWarningIcon = 48
         MsgBox($iWarningIcon, 'Hint', _
             'Please notice, in case you change a value in the "config.ini" file, your have to restart to program afterwards. ' & _
-            'Only then you changes will be active.' )
+            'Only then you changes will be active.')
     EndIf
 
     Run('notepad.exe ' & $sConfigFilePath)

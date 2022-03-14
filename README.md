@@ -17,9 +17,9 @@
 
 ## Description
 
-Au3AnswerByTag is a support tool for the Servicedesk employees of [University of Twente](https://www.utwente.nl/en/) in the Netherlands. Answers of repeating questions can be stored within the tool. They can quick and easily found by tags and copied in rich text format style to the email program of choice.
+Au3AnswerByTag is a support tool for the Servicedesk employees of a University in the Netherlands. Answers of repeating questions can be stored within the tool (in a database). They can also quick and easily found by tags and copied in rich text format style to the email program of choice.
 
-> Please notice, the program is still in testing phase and I have to add a few more features before it will become a 1.0.0 version.
+> Please notice, the program is still in a testing phase. I have to add more description context and probably few more features before it will become a v1.0.0 version.
 
 ## Features
 
