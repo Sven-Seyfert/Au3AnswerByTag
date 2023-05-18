@@ -11,6 +11,18 @@ Go to [legend](#legend---types-of-changes) for further information about the typ
 
 ## [Unreleased]
 
+## [1.1.0] - 2023-05-18
+
+### Changed
+
+- Favicon and logo image.
+- Style of license file.
+- Update copyright year to 2023.
+
+### Fixed
+
+- SQLite error of file 'sqlite3_x64.dll' not found.
+
 ## [1.0.0] - 2022-08-02
 
 ### Added
@@ -69,7 +81,8 @@ Go to [legend](#legend---types-of-changes) for further information about the typ
 
 - All repository data and dependencies.
 
-[Unreleased]: https://github.com/Sven-Seyfert/Au3AnswerByTag/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/Sven-Seyfert/Au3AnswerByTag/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/Sven-Seyfert/Au3AnswerByTag/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Sven-Seyfert/Au3AnswerByTag/compare/v0.4.0...v1.0.0
 [0.4.0]: https://github.com/Sven-Seyfert/Au3AnswerByTag/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/Sven-Seyfert/Au3AnswerByTag/compare/v0.2.0...v0.3.0
