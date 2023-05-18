@@ -29,7 +29,6 @@ If $aInst[0][0] > 1 Then Exit
 #include <GuiRichEdit.au3>
 #include <IE.au3>
 #include <SQLite.au3>
-#include <SQLite.dll.au3>
 #include <String.au3>
 
 
